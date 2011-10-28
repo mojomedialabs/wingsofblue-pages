@@ -1,0 +1,112 @@
+<style>
+#boardName {
+    margin: 0px;
+    padding-left: 0px;
+}
+#boardName h3 {
+  color: #a9231a;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+#boardName > li {
+    position: relative;
+    padding-left: 150px;
+    list-style: none;
+    display: block;
+}
+#boardName > li a.email {
+    font-size: 13px;
+}
+#boardName > li img {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}
+#boardName > li h3 {
+    margin-top: 0px;
+    font-size: 19px;
+}
+#boardName > li div {
+    border-left: 2px solid #ccc;
+    padding-left: 15px;
+    padding-bottom: 15px;
+    margin: 0px;
+}
+.bio, .bio p {
+	text-overflow: ellipsis;
+}
+.bio {
+	display: block;
+        margin: 0px;
+        padding: 0px;
+}
+.bio li {
+  list-style: none;
+  display: block;
+}
+.bio .question {
+  color: #db2d21;
+  padding-right: 10px;
+}
+.bio.truncated {
+	height: 140px;
+	overflow: hidden;
+}
+</style>
+<ul id="boardName">
+<li class="target">
+  <img src="/wingsofblue/wp-content/uploads/2011/10/MichaelLoveLeadership.jpg" width="100" alt="" />
+  <div>
+    <h3>Lt Col Mike Love</h3>
+    <ul class="bio">
+      <li><span class="question">Hometown:</span>Grand Prairie, TX</li>
+      <li><span class="question">Squadron Position:</span>Commander</li>
+      <li><span class="question">Career Highlights:</span>Casual Lt in the 94 ATS (when there was just a jump flight); flying the B-1B, T-38, and F-15C; returning to the 98 FTS as Ops Officer and then Commander</li>
+      <li><span class="question">Biggest Motivation Behind Working at the 98th FTS:</span>It’s been such a blessing to return to the team that meant so much to me as a cadet and getting a chance to try and make things better for current/future cadets.  There is no better cadet leadership laboratory than our parachuting programs and I’m glad to be part of it again.</li>
+      <li><span class="question">Favorite Jump:</span>My first AFF-I jump with C2C Zach Mills and jumping into Mile High Stadium with my 4-way team as a cadet.</li>
+      <li><span class="question">Why you enjoy jumping:</span>It really is “flight in its purest form”…stand in the door!</li>
+      <li><span class="question">Outside Jumping (What you Do):</span>Spend as much time as I can with my family: wife Mauri, sons Brody and Braden, and daughter Brenna. </li>
+    </ul>
+  </div>
+</li>
+<li class="target">
+  <img src="http://placehold.it/100x126" alt="" />
+  <div>
+    <h3>Capt Sarah Towler</h3>
+    <ul class="bio">
+      <li><span class="question">Hometown:</span>Laramie, Wy</li>
+      <li><span class="question">Squadron Position:</span>Asst Jump Flight Commander</li>
+      <li><span class="question">Career Highlights:</span>Receiving my pilot wings. Being stationed at Cheyenne, Wyoming in the first Active Duty Associate unit. Becoming a C-130 Aircraft Commander.
+Deploying in support of both OIF and OEF. Accomplishing several challenging combat airdrops and short field assault takeoffs and landings as part of these deployments.</li>
+      <li><span class="question">Biggest Motivation Behind Working at the 98th FTS:</span>To mentor and work with cadets. I am wanted to come here to give back to the 98th all that it gave me.</li>
+      <li><span class="question">Favorite Jump:</span>The Race for the Cure demo when I was a cadet</li>
+      <li><span class="question">Why you enjoy jumping:</span>I like that you are constantly improving your skill. There is always something to work towards. Also there are so many great experiences associated with skydiving. There is nothing like being under canopy on a clear calm day. </li>
+      <li><span class="question">Outside Jumping (What you Do):</span>Most of my jumping is done through the military.</li>
+    </ul>
+  </div>
+</li>
+</ul>
+<script src="http://code.jquery.com/jquery-1.6.4.js"></script>
+<script>
+  $(function(){
+	  var event, bios, button, buttons;
+
+	  bios = $('.bio').not('.ignore');
+	  event = function(e){
+		  e.preventDefault();
+		  var jT, bio;
+		  jT = $(this);
+		  bio = jT.parent().find('.bio');
+		  if(bio.hasClass('truncated')){
+		      bios.addClass('truncated');
+		      buttons.each(function(){  if (this !== jT[0]) this.innerHTML = "Read More" });
+		      jT.text('collapse').parent().find('.bio').removeClass('truncated');
+	      } else {
+			  bio.addClass('truncated');
+			  jT.text('Read Mode');
+		  }
+	  }
+      bios.addClass('truncated').after($('<a class="expanding-button" href="#javascript">Read More</a>').click(event));
+      buttons = $('.expanding-button')
+  });
+</script>
