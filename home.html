@@ -1,0 +1,48 @@
+<div id="slideshow">
+  <div id="home-1"><img src="/wingsofblue/wp-content/uploads/2011/10/Home-1.png" /></div>
+  <div id="home-2"><img src="/wingsofblue/wp-content/uploads/2011/10/Home-2.png" /></div>
+  <div id="home-3"><img src="/wingsofblue/wp-content/uploads/2011/10/Home-3.png" /></div>
+  <ul>
+    <li><a href="#home-1"><img src="/wingsofblue/wp-content/uploads/2011/10/empty.png" /></a></li>
+    <li><a href="#home-2"><img src="/wingsofblue/wp-content/uploads/2011/10/empty.png" /></a></li>
+    <li><a href="#home-3"><img src="/wingsofblue/wp-content/uploads/2011/10/empty.png" /></a></li>
+  </ul>
+</div>
+
+<script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js'></script>
+<script src='wp-content/themes/wingsofblue/js/jquery.ui.tabs.bottom.js'></script>
+<script>
+jQuery(function(){
+  jQuery('#slideshow').tabs({"showNextPrev": true}).tabs("rotate", 6000);
+});
+</script>
+<style>
+  #main {
+    background-image: url(/wingsofblue/wp-content/uploads/2011/10/Home-Gradient.png);
+    background-repeat: repeat-y;
+  }
+  #slideshow {
+    width: 753px;
+  }
+  #slideshow ul {
+    margin: 0px;
+    padding-right: 24px;
+    float: right;
+  }
+  #slideshow ul li {
+    display: inline-block;
+    list-style: none;
+    margin-left: 5px;
+    padding: 0px;
+  }
+  .ui-state-default, .ui-state-default img, .ui-state-default a {
+    width: 15px;
+    height: 15px;
+  }
+  .ui-state-default {
+    background-image: url(/wingsofblue/wp-content/uploads/2011/10/Home-Star-Off.png);
+  }
+  .ui-tabs-selected {
+    background-image: url(/wingsofblue/wp-content/uploads/2011/10/Home-Star-On.png);
+  }
+</style>
